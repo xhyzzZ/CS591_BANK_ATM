@@ -16,9 +16,6 @@ public final class GUI extends JFrame implements ActionListener {
     /**
      *
      */
-    private static String Path = "/Users/kobale/IdeaProjects/Bank ATM/src/History.txt";
-    private static String OpenAccountMoney = "$5";
-
     private static final long serialVersionUID = 1L;
     private MainMenu mainMenuPanel;
     private Login loginPanel;
@@ -130,17 +127,17 @@ public final class GUI extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent a) {
                 System.out.println("Login Pressed");
                 try {
-                    BankAccount.createFile(Path);
+                    BankAccount.createFile(BankAccount.Path);
                     System.out.println(Account.GET_ACCOUNT(loginPanel.getAccountNumber(), loginPanel.getAccountPin()).toString());
                     accountNumber = loginPanel.getAccountNumber();
                     accountPin = loginPanel.getAccountPin();
                     if(Account
                     .GET_ACCOUNT_MAP().get(accountNumber) instanceof SavingsAccount) {
                         currentAccount = (SavingsAccount)Account.GET_ACCOUNT(accountNumber, accountPin);
-                        BankAccount.writeTxtFile("Saving account " + accountNumber + " is opened, open fee is " + OpenAccountMoney + ".\n", Path, true);
+                        BankAccount.writeTxtFile("Saving account " + accountNumber + " is opened, open fee is " + BankAccount.OpenAccountMoney + ".\n", BankAccount.Path, true);
                     } else {
                         currentAccount = (CheckingsAccount)Account.GET_ACCOUNT(accountNumber, accountPin);
-                        BankAccount.writeTxtFile("Checking account " + accountNumber + " is opened, open fee is " + OpenAccountMoney + ".\n", Path, true);
+                        BankAccount.writeTxtFile("Checking account " + accountNumber + " is opened, open fee is " + BankAccount.OpenAccountMoney + ".\n", BankAccount.Path, true);
                     }
                     loginPanel.setVisible(false);
                     accountMenuPanel.setVisible(true);
@@ -252,12 +249,12 @@ public final class GUI extends JFrame implements ActionListener {
                 System.out.println("Deposit Pressed");
                 try {
                     String account = String.valueOf(loginPanel.getAccountNumber());
-                    BankAccount.createFile(Path);
+                    BankAccount.createFile(BankAccount.Path);
                     currentAccount.deposit(depositPanel.getDepositAmount());
                     if(Account.GET_ACCOUNT_MAP().get(Integer.parseInt(account)) instanceof SavingsAccount) {
-                        BankAccount.writeTxtFile("Saving account " + account + " deposited " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(depositPanel.getDepositAmount())) + ".\n", Path, true);
+                        BankAccount.writeTxtFile("Saving account " + account + " deposited " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(depositPanel.getDepositAmount())) + ".\n", BankAccount.Path, true);
                     } else {
-                        BankAccount.writeTxtFile("Checking account " + account + " deposited " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(depositPanel.getDepositAmount())) + ".\n", Path, true);
+                        BankAccount.writeTxtFile("Checking account " + account + " deposited " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(depositPanel.getDepositAmount())) + ".\n", BankAccount.Path, true);
                     }
                     JOptionPane.showMessageDialog(null, "Deposited" + " " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(depositPanel.getDepositAmount())) + " to your account.", "",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -283,9 +280,9 @@ public final class GUI extends JFrame implements ActionListener {
                     currentAccount.withdraw(withdrawPanel.getWithdrawAmount());
                     if(Account.GET_ACCOUNT_MAP().get(Integer.parseInt(account)) instanceof SavingsAccount) {
                         BankAccount.writeTxtFile("Saving account " + account + " withdrawn " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount()))
-                                + " deduct interest fee " +  DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount() * SavingsAccount.getWithdrawInterestRate(0.05))) + ".\n", Path, true);
+                                + " deduct interest fee " +  DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount() * SavingsAccount.getWithdrawInterestRate(0.05))) + ".\n", BankAccount.Path, true);
                     } else {
-                        BankAccount.writeTxtFile("Checking account " + account + " withdrawn " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount())) + ".\n", Path, true);
+                        BankAccount.writeTxtFile("Checking account " + account + " withdrawn " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount())) + ".\n", BankAccount.Path, true);
                     }
                     JOptionPane.showMessageDialog(null, "Withdrawn" + " " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(withdrawPanel.getWithdrawAmount())) + " to your account.", "",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -307,14 +304,14 @@ public final class GUI extends JFrame implements ActionListener {
                 System.out.println("Loan Pressed");
                 try {
                     String account = String.valueOf(loginPanel.getAccountNumber());
-                    BankAccount.createFile(Path);
+                    BankAccount.createFile(BankAccount.Path);
                     currentAccount.loan(loanPanel.getLoanAmount());
                     if(Account.GET_ACCOUNT_MAP().get(Integer.parseInt(account)) instanceof SavingsAccount) {
                         BankAccount.writeTxtFile("Saving account " + account + " loaned " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount())) +
-                                " Interest Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount() * SavingsAccount.getLoanInterestRate(0.05))) + ".\n", Path, true);
+                                " Interest Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount() * SavingsAccount.getLoanInterestRate(0.05))) + ".\n", BankAccount.Path, true);
                     } else {
                         BankAccount.writeTxtFile("Checking account " + account + " loaned " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount())) +
-                                " Interest Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount() * CheckingsAccount.getLoanInterestRate(0.05))) + ".\n", Path, true);
+                                " Interest Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount() * CheckingsAccount.getLoanInterestRate(0.05))) + ".\n", BankAccount.Path, true);
                     }
                     JOptionPane.showMessageDialog(null, "Loaned" + " " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(loanPanel.getLoanAmount())) + " to your account.", "",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -346,9 +343,9 @@ public final class GUI extends JFrame implements ActionListener {
                     if(Account.ACCOUNT_EXISTS(transferAccount)) {
                         currentAccount.transfer(transferAccount, transferAmount);
                         if(Account.GET_ACCOUNT_MAP().get(transferAccount) instanceof SavingsAccount) {
-                            BankAccount.writeTxtFile(accounts + account + " transferred " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount)) + " to " + "saving account " + String.valueOf(transferAccount) + " Transaction Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount * 0.02)) + ".\n", Path, true);
+                            BankAccount.writeTxtFile(accounts + account + " transferred " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount)) + " to " + "saving account " + String.valueOf(transferAccount) + " Transaction Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount * 0.02)) + ".\n", BankAccount.Path, true);
                         } else {
-                            BankAccount.writeTxtFile(accounts + account + " transferred " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount)) + " to " + "checking account " + String.valueOf(transferAccount) + " Transaction Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount * 0.02)) + ".\n", Path, true);
+                            BankAccount.writeTxtFile(accounts + account + " transferred " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount)) + " to " + "checking account " + String.valueOf(transferAccount) + " Transaction Fee: " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount * 0.02)) + ".\n", BankAccount.Path, true);
                         }
                         JOptionPane.showMessageDialog(null, "Transferred" + " " + DOLLAR.TO_US_CURRENCY_FORMAT(new BigDecimal(transferAmount)) + " to"+ transferPanel.getTransferAccount(), "",
                                 JOptionPane.INFORMATION_MESSAGE);

@@ -16,7 +16,9 @@ import java.math.RoundingMode;
  */
 public class BankAccount extends Account {
 
-    private static String Path = "/Users/kobale/IdeaProjects/Bank ATM/src/History.txt";
+    public static String OpenAccountMoney = "$5";
+
+    public static String Path = "/Users/kobale/IdeaProjects/Bank ATM/src/History.txt";
 
     /**
      * Stores the user's account balance saved to two significant decimal places.

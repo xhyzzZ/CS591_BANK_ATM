@@ -9,7 +9,7 @@ Second is that when you create a new account and want to login, you need the acc
     - DOLLAR
     - FRANC
     - RMB
-  - [Account](#Class-atm.account.Account(Abstract))
+  - Account
   - BankAccount
   - CheckingsAccount
   - SavingsAccount
@@ -154,6 +154,14 @@ public static final HashMap<Integer, Account> GET_ACCOUNT_MAP()
 ```
 ## Class atm.account.BankAccount extends Account
 ### Variables
+- OpenAccountMoney
+```
+/**
+ * The cost for the first time you open a account
+ */
+ 
+private static String OpenAccountMoney
+```
 - Path(The Path which stores transaction history, change it in your computer)
 ```
 private static String Path = "/Users/kobale/IdeaProjects/Bank ATM/src/History.txt";
@@ -574,4 +582,4 @@ static final NumberFormat US_DOLLARS
 public static final String TO_FRANC_CURRENCY_FORMAT(BigDecimal amount)
 ```
 # GUI Design
-
+First GUI is the main entrance to our UI, which extends Jframe. Then, all other component extend JPanel. Finally, we add all component to our GUI class, switch each other when triggers click event.

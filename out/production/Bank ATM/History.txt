@@ -1,0 +1,2 @@
+Checking account 986499 is opened, open fee is $5.
+Checking account 986499 deposited $500.00.
