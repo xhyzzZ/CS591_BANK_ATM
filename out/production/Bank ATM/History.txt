@@ -1,4 +1,0 @@
-Checking account 772037 is opened, open fee is $5.
-Checking account 772037 deposited $1,000.00.
-Checking account 772037 transfer $500.00 to saving account 667906 Transaction Fee: $10.00.
-Saving account 667906 is opened, open fee is $5.

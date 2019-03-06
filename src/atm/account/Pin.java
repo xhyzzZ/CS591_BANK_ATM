@@ -28,26 +28,6 @@ public final class Pin {
     }
 
     /**
-     * Changes the PIN contained in the Pin wrapper object.
-     *
-     * @param accountNumber
-     *        The account that contains this Pin object.
-     * @param oldPin
-     *        The current PIN.
-     * @param newPin
-     *        The new PIN that will be saved.
-     * @param confirmPin
-     *        The new PIN entered again for confirmation.
-     * @throws IllegalArgumentException
-     *         Thrown If any of the PINs are invalid, or the newPin and confirmPin do not match.
-     */
-    public void changePin(int accountNumber, String oldPin, String newPin, String confirmPin) throws IllegalArgumentException {
-        if (IS_CORRECT_PIN(accountNumber, oldPin) && PINs_MATCH(newPin, confirmPin)) {
-            pin = newPin;
-        }
-    }
-
-    /**
      * Checks to see if the given PIN is 4 numerical digits.
      *
      * @param pin
