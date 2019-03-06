@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9e00a7f-398a-4bfb-8863-c7dad6b66d54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bank ATM/History.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bank ATM/History.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bank ATM/atm/account/SavingsAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bank ATM/atm/account/SavingsAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bank ATM/atm/gui/GUI$26.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bank ATM/atm/gui/GUI$26.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/atm/account/Pin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atm/account/Pin.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +27,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/atm/gui/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5250">
@@ -56,12 +51,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="329">
-                <caret line="576" lean-forward="true" selection-start-line="576" selection-end-line="576" />
+              <first_editor relative-caret-position="120">
+                <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
               </first_editor>
               <second_editor />
             </state>
@@ -215,7 +210,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551839643654" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551840307241" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -278,12 +273,12 @@
       <workItem from="1551407372037" duration="1385000" />
       <workItem from="1551469763277" duration="66140000" />
       <workItem from="1551832524402" duration="484000" />
-      <workItem from="1551833312094" duration="6412000" />
+      <workItem from="1551833312094" duration="6661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96239000" />
+    <option name="totallyTimeSpent" value="96488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,16 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="329">
-            <caret line="576" lean-forward="true" selection-start-line="576" selection-end-line="576" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/atm/gui/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5250">
@@ -650,6 +635,16 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

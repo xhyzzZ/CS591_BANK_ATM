@@ -1,15 +1,15 @@
 # Design Choice
 Basically, I divide account object and GUI class separately. I have three packages and a main function in atm package. The way I design the class in this way is that it's easier for us to change or make some updates without destroying original structure, like when you want to change UI, you can make changes in GUI, you want to change account properties, you can change it in account package.  
-The main entrance to the program is Main.java. I stored the history transaction log in History.txt file, it is like cache. Even you exit the ATM, the data will maintain in the file and you can look it locally, so it is very convenient. Also, you can clear the data in the ATM using manager account. That's the best way I can imagine to view and clear history transaction.  
-There are two things you need to pay attention:
-One is that you should change the path for your own History.txt in BankAccount.java.  
-Second is that when you create a new account and want to login, you need the account number which is six digits generated in command line.
+The main entrance to the program is **Main.java**. I stored the history transaction log in History.txt file, it is like cache. Even you exit the ATM, the data will maintain in the file and you can look it locally, so it is very convenient. Also, you can clear the data in the ATM using manager account. That's the best way I can imagine to view and clear history transaction.  
+There are two things you need to pay attention:  
+One is that you should change the path for your own **History.txt** in BankAccount.java.  
+Second is that when you create a new account and want to login, you need the account number which are six digits **generated in command line**.
 - atm.account
   - atm.account.CurrencyImpl
     - DOLLAR
     - FRANC
     - RMB
-  - Account
+  - [Account](#Class-atm.account.Account(Abstract))
   - BankAccount
   - CheckingsAccount
   - SavingsAccount
